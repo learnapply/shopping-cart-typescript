@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Product } from "../App";
+import cartIcon from "../assets/cart-icon.png";
 
-const Header = () => {
+
+interface HeaderProps {
+  cart: Product[];
+}
+
+const Header: React.FC<HeaderProps> = ({ cart }) => {
+  const count = cart.filter((product) => product.quantity).length;
+
   return (
     <HeaderWrapper>
       <Container>
@@ -16,7 +25,10 @@ const Header = () => {
             <li>Shop</li>
           </Link>
           <Link to="/cart">
-            <li>Cart</li>
+            <li>
+              <img className="cart-logo" src={cartIcon} width="40px" />
+              <small>{count}</small>
+            </li>
           </Link>
         </Navbar>
       </Container>

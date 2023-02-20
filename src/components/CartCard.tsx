@@ -1,18 +1,20 @@
-import { Product } from "../App";
+import React from "react";
 
-interface ProductCardProps {
+interface CartCardProps {
   name: string;
-  product: Product;
+  desc: string;
+  product: any;
   price: number;
   quantity: number;
   imgUrl: string;
   handleAddToCart: () => void;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>, product: Product) => void;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>, product: any) => void;
   handleRemoveFromCart: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const CartCard = ({
   name,
+  desc,
   product,
   price,
   quantity,
@@ -20,16 +22,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
   handleAddToCart,
   handleChange,
   handleRemoveFromCart,
-}) => {
+}: CartCardProps) => {
   return (
-    <div className="product-card">
-      <img src={imgUrl} alt={name} />
-      <div className="product-card-info">
-        <div>
-          <p>{name}</p>
+    <div className="cart-card">
+      <div className="cart-img-container">
+        <img src={imgUrl} alt={name} />
+      </div>
+      <div className="cart-card-info">
+        <div className="cart-card-product-info">
+          <h3>{name}</h3>
           <p>
             <em>${price}/kg</em>
           </p>
+          <p>{desc}</p>
         </div>
         {!quantity ? (
           <button className="add-to-card-btn" onClick={handleAddToCart}>
@@ -53,4 +58,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
   );
 };
 
-export default ProductCard;
+export default CartCard;

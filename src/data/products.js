@@ -19,6 +19,7 @@ export const products = [
     desc: "Ut id sagittis sem. Suspendisse aliquam bibendum nunc, nec elementum nunc tempor eget. Vestibulum sed aliquet ligula. Nulla sit amet.",
     price: 5,
     src: frankZhang,
+    quantity: 0,
   },
   {
     id: 1,
@@ -26,6 +27,7 @@ export const products = [
     desc: "Aenean et mi fermentum, tincidunt ligula vitae, vehicula felis. Duis et mauris sapien. Ut ut nisi vel lorem dapibus facilisis.",
     price: 7,
     src: joeGreen,
+    quantity: 0,
   },
   {
     id: 2,
@@ -33,6 +35,7 @@ export const products = [
     desc: "Pellentesque metus ligula, finibus vel vestibulum ut, commodo eget tellus. Morbi tristique sodales tortor at imperdiet. Morbi tempus mauris quis.",
     price: 3,
     src: mcheLee,
+    quantity: 0,
   },
   {
     id: 3,
@@ -40,6 +43,7 @@ export const products = [
     desc: "In interdum diam ipsum, ut ullamcorper metus varius nec. Aliquam erat volutpat. Maecenas vehicula augue et viverra hendrerit. Integer ex.",
     price: 8,
     src: rodrigoDosReis,
+    quantity: 0,
   },
   {
     id: 4,
@@ -47,6 +51,7 @@ export const products = [
     desc: "In cursus porttitor magna, sit amet aliquam arcu scelerisque sed. Cras magna dui, facilisis congue euismod faucibus, ultrices bibendum nulla.",
     price: 10,
     src: rosannaGaddoni,
+    quantity: 0,
   },
   {
     id: 5,
@@ -54,6 +59,7 @@ export const products = [
     desc: "Proin ac nisi vitae lorem lacinia iaculis ut non magna. Curabitur iaculis quis dui in lobortis. Nunc mattis ut dolor.",
     price: 10,
     src: shelleyPauls,
+    quantity: 0,
   },
   {
     id: 6,
@@ -61,6 +67,7 @@ export const products = [
     desc: "Morbi molestie odio ac ante feugiat cursus. Fusce pretium ipsum id ex consequat consectetur. Vivamus tincidunt eu justo a efficitur.",
     price: 6,
     src: xuanNguyen,
+    quantity: 0,
   },
   {
     id: 7,
@@ -68,6 +75,7 @@ export const products = [
     desc: "Sed mollis placerat suscipit. Morbi vehicula massa et vulputate egestas. Ut aliquet aliquam lorem sed aliquam. Nulla ac metus ante.",
     price: 11,
     src: blackGarlic,
+    quantity: 0,
   },
   {
     id: 8,
@@ -75,6 +83,7 @@ export const products = [
     desc: "Fusce vel sapien vehicula, venenatis sapien id, venenatis lectus. Praesent vel condimentum tellus, nec aliquam ligula. In facilisis arcu libero.",
     price: 7,
     src: mixedGarlic,
+    quantity: 0,
   },
   {
     id: 9,
@@ -82,6 +91,7 @@ export const products = [
     desc: "Nunc dapibus ornare dolor. Nunc iaculis tincidunt magna. Praesent ut sapien felis. Nunc porta pellentesque pretium. Maecenas elementum ut sem.",
     price: 50,
     src: growingGarlic,
+    quantity: 0,
   },
   {
     id: 10,
@@ -89,6 +99,7 @@ export const products = [
     desc: "Maecenas vehicula ligula in felis tempus, sit amet vestibulum justo malesuada. Aliquam facilisis tellus neque, tincidunt convallis enim mattis et.",
     price: 15,
     src: slicedGarlic,
+    quantity: 0,
   },
   {
     id: 11,
@@ -96,6 +107,7 @@ export const products = [
     desc: "Ut placerat mollis nunc, id maximus massa accumsan vitae. Vivamus sed fringilla nibh, non placerat nisl. Etiam fermentum eros non.",
     price: 5,
     src: chineseGarlic,
+    quantity: 0,
   },
   {
     id: 12,
@@ -103,5 +115,6 @@ export const products = [
     desc: "Maecenas fringilla metus sed urna semper, ac ornare mauris rhoncus. Donec in ultrices eros, et malesuada arcu. Nullam ac sapien.",
     price: 17,
     src: peeledGarlic,
+    quantity: 0,
   },
 ];

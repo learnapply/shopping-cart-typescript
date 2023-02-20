@@ -6,12 +6,13 @@ import Shop from "./components/Shop";
 import Cart from "./components/Cart";
 import { products as productsArray } from "./data/products";
 
-interface Product {
+export interface Product {
   id: number;
+  name: string;
   price: number;
   desc: string;
   src: string;
-  quantity?: number;
+  quantity: number;
 }
 
 const App: React.FC = () => {
@@ -34,7 +35,7 @@ const App: React.FC = () => {
   ): void {
     let itemIndex = cart.findIndex((item) => item.id === product.id);
     let newCart = [...cart];
-    newCart[itemIndex].quantity = e.target.value;
+    newCart[itemIndex].quantity = +e.target.value;
     setCart(newCart);
     console.log(cart);
   }
