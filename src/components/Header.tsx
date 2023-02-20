@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Container>
-        <HeaderText>GarliCart</HeaderText>
+        <Link to="/">
+          <HeaderText>garliCart</HeaderText>
+        </Link>
         <Navbar>
           <Link to="/">
             <li>Home</li>
@@ -25,19 +27,43 @@ const Header = () => {
 export default Header;
 
 const HeaderWrapper = styled.div`
-  background-color: #c98080;
-  padding: 1rem 2rem;
+  background-color: #000000;
+  padding: 1rem 3rem;
 `;
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
+  font-size: 1.3rem;
+  > a {
+    text-decoration: unset;
+    color: white;
+  }
 `;
 
-const HeaderText = styled.div``;
+const HeaderText = styled.h1`
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`;
 
 const Navbar = styled.div`
   display: flex;
   list-style: none;
-  gap: 1rem;
-`
+  gap: 3rem;
+  > a {
+    text-decoration: unset;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+`;
