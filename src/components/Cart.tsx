@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import { Product } from "../App";
 import CartCard from "./CartCard";
-
 
 type CartProps = {
   cart: Product[];
@@ -25,8 +25,8 @@ const Cart: React.FC<CartProps> = ({
   );
 
   return (
-    <div className="cart-container">
-      <div className="cart-card-container">
+    <CartWrapper>
+      <CardsContainer>
         {checkout.map((product) => {
           return (
             <CartCard
@@ -43,14 +43,14 @@ const Cart: React.FC<CartProps> = ({
             />
           );
         })}
-      </div>
+      </CardsContainer>
       {checkout.length === 0 && (
-        <div className="please-add-items">
+        <PleaseAddItems>
           <h1>Please add items to your cart.</h1>
-        </div>
+        </PleaseAddItems>
       )}
       {checkout.length > 0 && (
-        <div className="checkout-box">
+        <CheckoutBox>
           <h3>Your total:</h3>
           <h1> ${total}</h1>
           <div>
@@ -60,10 +60,78 @@ const Cart: React.FC<CartProps> = ({
             </label>
             <button>CHECKOUT</button>
           </div>
-        </div>
+        </CheckoutBox>
       )}
-    </div>
+    </CartWrapper>
   );
 };
 
 export default Cart;
+
+const CartWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
+const CardsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0rem;
+  gap: 1rem;
+`;
+
+const CheckoutBox = styled.div`
+  background-color: #fff;
+  padding: 1rem;
+  height: 250px;
+  width: 15vw;
+  margin-top: 4rem;
+  border: 2px solid rgb(108, 73, 118);
+  border-radius: 10px;
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  > h1 {
+    font-size: 3rem;
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+  > button {
+    margin-top: 0.5rem;
+    padding: 1rem 0rem;
+    justify-self: stretch;
+    background-color: #ffffff;
+    border: 1px solid rgb(108, 73, 118);
+    border-radius: 4px;
+    color: #222222;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+      transform 0.1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+    &:hover {
+      transform: scale(0.96);
+      border-color: rgb(108, 73, 118);
+      color: rgb(108, 73, 118);
+      fill: rgb(108, 73, 118);
+    }
+  }
+`;
+
+const PleaseAddItems = styled.div`
+  position: absolute;
+  padding: 4rem;
+`;

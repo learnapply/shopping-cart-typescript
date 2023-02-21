@@ -12,13 +12,11 @@ const GlobalStyle = styled.createGlobalStyle`
 
   body {
     height: 100vh;
-    width: 100vw;
     background-color: #ebebeb;
   }
 
   #root {
     height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
   }

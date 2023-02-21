@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { Product } from "../App";
 
 interface ProductCardProps {
@@ -7,7 +8,10 @@ interface ProductCardProps {
   quantity: number;
   imgUrl: string;
   handleAddToCart: () => void;
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>, product: Product) => void;
+  handleChange: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    product: Product
+  ) => void;
   handleRemoveFromCart: () => void;
 }
 
@@ -22,9 +26,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   handleRemoveFromCart,
 }) => {
   return (
-    <div className="product-card">
+    <ProductCardWrapper>
       <img src={imgUrl} alt={name} />
-      <div className="product-card-info">
+      <ProductCardInfo>
         <div>
           <p>{name}</p>
           <p>
@@ -32,11 +36,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </p>
         </div>
         {!quantity ? (
-          <button className="add-to-card-btn" onClick={handleAddToCart}>
+          <AddToCartButton onClick={handleAddToCart}>
             Add to cart
-          </button>
+          </AddToCartButton>
         ) : (
-          <div className="adjust-quantity">
+          <AdjustQuantity>
             <button onClick={handleRemoveFromCart}>-</button>
             <input
               type="text"
@@ -46,11 +50,99 @@ const ProductCard: React.FC<ProductCardProps> = ({
               onChange={(e) => handleChange(e, product)}
             />
             <button onClick={handleAddToCart}>+</button>
-          </div>
+          </AdjustQuantity>
         )}
-      </div>
-    </div>
+      </ProductCardInfo>
+    </ProductCardWrapper>
   );
 };
 
 export default ProductCard;
+
+const ProductCardWrapper = styled.div`
+  background-color: white;
+  margin: 1rem;
+  border: 1px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  > img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+`;
+
+const ProductCardInfo = styled.div`
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+`;
+
+const AddToCartButton = styled.button`
+  height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+  &:hover {
+    background-color: #f7f7f7;
+    border-color: #000000;
+  }
+`;
+
+export const AdjustQuantity = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  > input {
+    width: 25px;
+    text-align: center;
+    font-size: large;
+  }
+  > button {
+    padding: 0.2rem 0.6rem;
+    background-color: #ffffff;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    color: #222222;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+      transform 0.1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+    &:active {
+      background-color: #f7f7f7;
+      border-color: #000000;
+      transform: scale(0.96);
+    }
+  }
+`;
