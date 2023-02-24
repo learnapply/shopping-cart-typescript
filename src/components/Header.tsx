@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Product } from "../App";
 import cartIcon from "../assets/cart-icon.png";
 
-
 interface HeaderProps {
   cart: Product[];
 }
@@ -26,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ cart }) => {
           </Link>
           <Link to="/cart">
             <li>
-              <img className="cart-logo" src={cartIcon} width="40px" />
+              <img className="cart-logo" src={cartIcon} width="40px" alt="shopping cart"/>
               <small>{count}</small>
             </li>
           </Link>

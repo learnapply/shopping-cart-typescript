@@ -43,7 +43,6 @@ export default Shop;
 
 const ShopWrapper = styled.div`
   padding: 2rem 6rem;
-
 `;
 
 const Container = styled.div`
